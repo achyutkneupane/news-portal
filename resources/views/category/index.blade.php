@@ -1,3 +1,5 @@
 <x-back-layout>
-    Test
+    <div>
+        Content
+    </div>
 </x-back-layout>

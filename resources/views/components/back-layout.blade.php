@@ -10,7 +10,11 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
-<x-base.back.navbar />
-{{ $slot }}
+<div>
+    <x-base.back.navbar />
+    <div class="container">
+        {{ $slot }}
+    </div>
+</div>
 </body>
 </html>
