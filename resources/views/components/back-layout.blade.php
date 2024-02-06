@@ -12,8 +12,19 @@
 <body>
 <div>
     <x-base.back.navbar />
-    <div class="container">
-        {{ $slot }}
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-3">
+                <x-base.back.sidebar />
+            </div>
+            <div class="col-9">
+                <div class="card">
+                    <div class="card-body">
+                        {{ $slot }}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 </body>
