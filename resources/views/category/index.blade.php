@@ -1,3 +1,3 @@
-<x-front-layout>
+<x-back-layout>
     Test
-</x-front-layout>
+</x-back-layout>
