@@ -26,8 +26,16 @@
                 <td>
                     {{ $category->description }}
                 </td>
-                <td></td>
-                <td></td>
+                <td>
+                    @if($category->image)
+                    <img src="{{ asset('storage/images/'.$category->image) }}" alt="{{ $category->title }}" height="100" />
+                    @else
+                    <span class="text-danger">No images uploaded</span>
+                    @endif
+                </td>
+                <td>
+                    <a href="{{ route('category.edit', $category->id) }}" class="btn btn-warning">Edit</a>
+                </td>
             </tr>
         @endforeach
         </tbody>

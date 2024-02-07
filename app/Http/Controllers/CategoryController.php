@@ -64,7 +64,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('category.edit', ['category' => $category]);
     }
 
     /**
@@ -72,7 +72,32 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        if($request->slug == NULL || $request->slug == "") {
+            $slug = Str::slug($request->title);
+        } else {
+            $slug = $request->slug;
+        }
+
+        if($request->image) {
+            $filename = time() . '-' . $slug . '.' . $request->image->extension();
+            $request->image->storeAs('public/images/', $filename);
+        }
+
+//        $category->update([
+//            'title' => $request->title,
+//            'slug' => $slug,
+//            'description' => $request->description,
+//        ]);
+
+        $category->title = $request->title;
+        $category->slug = $slug;
+        $category->description = $request->description;
+        if($request->image) {
+            $category->image = $filename;
+        }
+        $category->save();
+
+        return redirect()->route('category.index');
     }
 
     /**
