@@ -37,10 +37,15 @@ class CategoryController extends Controller
         } else {
             $slug = $request->slug;
         }
+
+        $filename = time() . '-' . $slug . '.' . $request->image->extension();
+        $request->image->storeAs('public/images/', $filename);
+
         Category::create([
             'title' => $request->title,
             'slug' => $slug,
-            'description' => $request->description
+            'description' => $request->description,
+            'image' => $filename
         ]);
 
         return redirect()->route('category.index');
