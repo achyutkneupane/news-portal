@@ -1,4 +1,5 @@
 <x-back-layout>
+    <a href="{{ route('category.create') }}" class="btn btn-primary">Add Category</a>
     <table class="table">
         <thead>
         <tr>
