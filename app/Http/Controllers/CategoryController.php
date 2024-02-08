@@ -48,7 +48,7 @@ class CategoryController extends Controller
             'image' => $filename
         ]);
 
-        return redirect()->route('category.index');
+        return redirect()->route('category.index')->with('success', 'Category added successfully');
     }
 
     /**
@@ -97,7 +97,7 @@ class CategoryController extends Controller
         }
         $category->save();
 
-        return redirect()->route('category.index');
+        return redirect()->route('category.index')->with('success', 'Category updated successfully');
     }
 
     /**
@@ -106,6 +106,6 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-        return redirect()->route('category.index');
+        return redirect()->route('category.index')->with('success', 'Category Deleted Successfully');
     }
 }

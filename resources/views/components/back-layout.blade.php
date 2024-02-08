@@ -20,6 +20,9 @@
             <div class="col-9">
                 <div class="card">
                     <div class="card-body">
+
+                        <x-base.back.alert-message />
+
                         {{ $slot }}
                     </div>
                 </div>
