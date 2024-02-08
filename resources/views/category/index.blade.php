@@ -35,6 +35,11 @@
                 </td>
                 <td>
                     <a href="{{ route('category.edit', $category->id) }}" class="btn btn-warning">Edit</a>
+                    <form action="{{ route('category.destroy', $category->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                    </form>
                 </td>
             </tr>
         @endforeach
