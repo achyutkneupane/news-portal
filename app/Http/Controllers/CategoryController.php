@@ -32,6 +32,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'slug' => 'nullable|unique:categories,slug',
+            'description' => 'nullable',
+            'image' => 'nullable|file|between:100,1024'
+        ]);
+
         if($request->slug == NULL || $request->slug == "") {
             $slug = Str::slug($request->title);
         } else {
@@ -72,6 +79,13 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
+        $request->validate([
+            'title' => 'required',
+            'slug' => 'nullable|unique:categories,slug',
+            'description' => 'nullable',
+            'image' => 'nullable|file|between:100,1024'
+        ]);
+
         if($request->slug == NULL || $request->slug == "") {
             $slug = Str::slug($request->title);
         } else {

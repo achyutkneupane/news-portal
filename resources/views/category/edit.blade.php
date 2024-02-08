@@ -4,11 +4,11 @@
         @method('PUT')
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" name="title" id="title" placeholder="Enter Title for Category" class="form-control" value="{{ $category->title }}" />
+            <input type="text" name="title" id="title" placeholder="Enter Title for Category" class="form-control" value="{{ old('title') ?? $category->title }}" />
         </div>
         <div class="form-group mt-3">
             <label for="slug">Slug</label>
-            <input type="text" name="slug" id="slug" placeholder="Enter Slug for Category" class="form-control" value="{{ $category->slug }}" />
+            <input type="text" name="slug" id="slug" placeholder="Enter Slug for Category" class="form-control" value="{{ old('slug') ?? $category->slug }}" />
         </div>
         <div class="form-group mt-3">
             <label for="description">Description</label>
