@@ -49,4 +49,5 @@
         @endforeach
         </tbody>
     </table>
+    {{ $categories->links() }}
 </x-back-layout>

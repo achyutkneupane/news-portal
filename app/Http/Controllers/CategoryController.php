@@ -13,7 +13,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::withCount('articles')->get()->sortByDesc('id');
+        $categories = Category::withCount('articles')->orderByDesc('id')->paginate(2);
         return view('category.index', [
             'categories' => $categories
         ]);
@@ -37,6 +37,8 @@ class CategoryController extends Controller
             'slug' => 'nullable|unique:categories,slug',
             'description' => 'nullable',
             'image' => 'nullable|file|between:100,1024'
+        ], [
+            'title.required' => 'Please enter the title'
         ]);
 
         if($request->slug == NULL || $request->slug == "") {

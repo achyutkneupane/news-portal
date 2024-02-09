@@ -3,7 +3,7 @@
         @csrf
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" name="title" id="title" placeholder="Enter Title for Category" class="form-control" value="{{ old('title') }}"
+            <input type="text" name="title" id="title" placeholder="Enter Title for Category" class="form-control" value="{{ old('title') }}" />
             @error('title')
             <div class="text-danger">{{ $message }}</div>
             @enderror
