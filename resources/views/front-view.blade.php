@@ -1,7 +1,3 @@
-@extends('layouts.app')
-
-@section('content')
-<div>
-    Landing Page
-</div>
-@endsection
+<x-front-layout>
+    <x-base.front.topbar />
+</x-front-layout>
