@@ -8,6 +8,20 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Categories
+                    </a>
+                    <ul class="dropdown-menu">
+                        @foreach($categories as $category)
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    {{ $category->title }}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">About Us</a>
                 </li>
