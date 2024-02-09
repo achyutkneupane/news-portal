@@ -6,6 +6,7 @@
             <th scope="col">#</th>
             <th scope="col">Title</th>
             <th scope="col">Slug</th>
+            <th scope="col">Articles</th>
             <th scope="col">Description</th>
             <th scope="col">Image</th>
             <th scope="col">Action</th>
@@ -22,6 +23,9 @@
                 </td>
                 <td>
                     {{ $category->slug }}
+                </td>
+                <td>
+                    {{ $category->articles_count }}
                 </td>
                 <td>
                     {{ $category->description }}
