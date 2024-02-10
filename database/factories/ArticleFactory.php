@@ -21,7 +21,7 @@ class ArticleFactory extends Factory
             'title' => $this->faker->sentence,
             'slug' => $this->faker->slug,
             'content' => $this->faker->paragraph(10),
-            'image' => $this->faker->image('public/storage/images',400,300),
+            'image' => $this->faker->image('public/storage/images',400,300, null, false),
             'status' => $this->faker->randomElement(['active', 'inactive']),
             'category_id' => Category::get()->random()->id
         ];

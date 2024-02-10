@@ -83,7 +83,7 @@ class CategoryController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'slug' => 'nullable|unique:categories,slug',
+            'slug' => 'nullable|unique:categories,slug,'.$category->id,
             'description' => 'nullable',
             'image' => 'nullable|file|between:100,1024'
         ]);
