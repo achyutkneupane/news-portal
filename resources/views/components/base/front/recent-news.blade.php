@@ -5,6 +5,8 @@
         </h2>
     </div>
     <div>
-        <x-base.front.article-without-description />
+        @foreach($news as $news_item)
+            <x-base.front.article-without-description :id="$news_item->id" />
+        @endforeach
     </div>
 </div>

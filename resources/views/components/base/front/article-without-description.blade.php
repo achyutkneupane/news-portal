@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid mt-2">
     <div class="row">
         <div class="col-3">
             <img src="{{ asset('storage/images/'. $article->image) }}" class="w-100" />
