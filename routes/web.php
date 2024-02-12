@@ -21,3 +21,4 @@ Route::resource('/category', \App\Http\Controllers\CategoryController::class);
 
 Route::get('/', [\App\Http\Controllers\FrontController::class, 'landingPage'])->name('landing-page');
 Route::get('/article/{slug}', [\App\Http\Controllers\FrontController::class, 'articleView'])->name('article-view');
+Route::get('/category/{slug}', [\App\Http\Controllers\FrontController::class, 'categoryPage'])->name('category-view');
