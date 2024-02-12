@@ -23,7 +23,7 @@ class FrontController extends Controller
 
     public function categoryPage($slug)
     {
-        $category = Category::where('slug',$slug)->firstOrFail();
+        $category = Category::withCount('articles')->where('slug',$slug)->firstOrFail();
         return view('category-page', compact('category'));
     }
 }

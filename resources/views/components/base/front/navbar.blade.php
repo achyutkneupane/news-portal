@@ -15,7 +15,7 @@
                     <ul class="dropdown-menu">
                         @foreach($categories as $category)
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="{{ route('category-view', $category->slug) }}">
                                     {{ $category->title }}
                                 </a>
                             </li>
