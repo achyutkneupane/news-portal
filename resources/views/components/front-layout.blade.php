@@ -10,6 +10,8 @@
 </head>
 <body>
 <div>
+    <x-base.front.topbar />
+    <x-base.front.navbar />
     {{ $slot }}
 </div>
 </body>
