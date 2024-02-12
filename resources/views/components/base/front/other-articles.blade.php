@@ -2,4 +2,5 @@
     @foreach($articles as $article)
         <x-base.front.article-with-description :id="$article->id" />
     @endforeach
+    {{ $articles->links() }}
 </div>

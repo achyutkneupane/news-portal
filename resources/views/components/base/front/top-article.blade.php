@@ -9,7 +9,9 @@
     </div>
     <div class="mt-2">
         <h2 class="fw-bolder display-6">
-            {{ $article->title }}
+            <a href="{{ route('article-view', $article->slug) }}" alt="{{ $article->title }}" class="link-dark text-decoration-none">
+                {{ $article->title }}
+            </a>
         </h2>
     </div>
     <div class="d-flex justify-content-start gap-2">
