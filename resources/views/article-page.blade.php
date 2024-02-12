@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="mt-4" style="text-align: justify;">
-            {{ $article->content }}
+            {!! $article->content !!}
         </div>
     </div>
 </x-front-layout>
