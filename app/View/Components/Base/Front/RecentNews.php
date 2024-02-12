@@ -13,9 +13,9 @@ class RecentNews extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($count = 5)
     {
-        $this->news = Article::latest()->limit(5)->get();
+        $this->news = Article::latest()->limit($count)->get();
     }
 
     /**
