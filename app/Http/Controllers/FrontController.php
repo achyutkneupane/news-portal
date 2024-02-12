@@ -15,6 +15,8 @@ class FrontController extends Controller
     public function articleView($slug)
     {
         $article = Article::where('slug', $slug)->firstOrFail();
+        $article->views = $article->views + 1;
+        $article->save();
         return view('article-page', compact('article'));
     }
 }
