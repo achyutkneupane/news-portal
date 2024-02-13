@@ -9,7 +9,7 @@
 
         <div class="mt-4">
             @foreach($category->articles as $article)
-                <x-base.front.article-with-description :id="$article->id" />
+                <x-base.front.article-with-description :article="$article" />
             @endforeach
         </div>
     </div>
