@@ -15,7 +15,7 @@ class OtherArticles extends Component
      */
     public function __construct()
     {
-        $this->articles = Article::latest()->offset(5)->paginate(10);
+        $this->articles = Article::with('category')->latest()->offset(5)->paginate(10);
     }
 
     /**
