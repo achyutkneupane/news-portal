@@ -15,14 +15,17 @@
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
-        <div class="mb-3">
+        <div class="mt-3">
+            <textarea id="articlecontent"></textarea>
+        </div>
+        <div class="mt-3">
             <label for="image" class="form-label">Article Image</label>
             <input type="file" id="image" name="image" class="form-control">
             @error('image')
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
-        <div class="mb-3">
+        <div class="mt-3">
             <label for="category">Category</label>
             <select name="category_id" id="category" class="form-select">
                 <option value="" disabled selected>Select one category</option>
@@ -37,4 +40,15 @@
             <button type="submit" class="btn btn-success">Add</button>
         </div>
     </form>
+
+    @section('scripts')
+        <script src="https://cdn.tiny.cloud/1/p47paciinlfiov1oumn6ftva8g3x4qwt5z2z3258ayqs6lf4/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+        <script>
+            tinymce.init({
+                selector: 'textarea#articlecontent',
+                plugins: 'code table lists',
+                toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table'
+            });
+        </script>
+    @endsection
 </x-back-layout>
