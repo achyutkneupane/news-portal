@@ -6,7 +6,7 @@
     </div>
     <div>
         @foreach($news as $news_item)
-            <x-base.front.article-without-description :id="$news_item->id" />
+            <x-base.front.article-without-description :article="$news_item" />
         @endforeach
     </div>
 </div>
