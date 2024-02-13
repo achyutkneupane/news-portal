@@ -19,6 +19,11 @@ Route::get('/', [\App\Http\Controllers\FrontController::class, 'landingPage'])->
 Route::get('/article/{slug}', [\App\Http\Controllers\FrontController::class, 'articleView'])->name('article-view');
 Route::get('/category/{slug}', [\App\Http\Controllers\FrontController::class, 'categoryPage'])->name('category-view');
 
-Route::resource('/category', \App\Http\Controllers\CategoryController::class);
+Route::group([
+    'prefix' => '/dashboard',
+], function() {
+    Route::resource('/category', \App\Http\Controllers\CategoryController::class);
+    Route::resource('/article', \App\Http\Controllers\ArticleController::class);
+});
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
