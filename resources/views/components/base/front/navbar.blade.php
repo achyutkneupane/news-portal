@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body border-bottom">
     <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{ route('landing-page') }}">
             <img src="{{ asset('/images/codeitnews.png') }}" alt="{{ config('app.name') }}" width="100">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
