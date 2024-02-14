@@ -49,4 +49,11 @@ class FrontController extends Controller
             return redirect()->route('login')->with('error', 'Wrong credentials');
         }
     }
+
+    public function logout()
+    {
+        auth()->logout();
+
+        return redirect()->route('landing-page');
+    }
 }

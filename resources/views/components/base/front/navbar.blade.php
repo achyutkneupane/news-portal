@@ -28,6 +28,17 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact Us</a>
                 </li>
+                <li class="nav-item">
+                    @auth
+                        <a href="{{ route('logout') }}" class="nav-link">
+                            Logout
+                        </a>
+                    @else
+                        <a href="{{ route('login') }}" class="nav-link">
+                            Login
+                        </a>
+                    @endauth
+                </li>
             </ul>
         </div>
     </div>
