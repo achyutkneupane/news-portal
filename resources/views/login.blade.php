@@ -1,5 +1,6 @@
 <x-front-layout>
     <div class="mt-4">
+        <x-base.back.alert-message />
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
