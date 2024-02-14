@@ -26,4 +26,9 @@ class FrontController extends Controller
         $category = Category::withCount('articles')->with('articles.category')->where('slug',$slug)->firstOrFail();
         return view('category-page', compact('category'));
     }
+
+    public function loginPage()
+    {
+        return view('login');
+    }
 }

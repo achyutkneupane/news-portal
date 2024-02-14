@@ -12,10 +12,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Auth::routes();
+//Auth::routes();
 
 
 Route::get('/', [\App\Http\Controllers\FrontController::class, 'landingPage'])->name('landing-page');
+Route::get('/login', [\App\Http\Controllers\FrontController::class, 'loginPage'])->name('login');
 Route::get('/article/{slug}', [\App\Http\Controllers\FrontController::class, 'articleView'])->name('article-view');
 Route::get('/category/{slug}', [\App\Http\Controllers\FrontController::class, 'categoryPage'])->name('category-view');
 
