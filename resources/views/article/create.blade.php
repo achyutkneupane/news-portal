@@ -16,7 +16,7 @@
             @enderror
         </div>
         <div class="mt-3">
-            <textarea id="articlecontent"></textarea>
+            <textarea id="articlecontent" name="content"></textarea>
         </div>
         <div class="mt-3">
             <label for="image" class="form-label">Article Image</label>
@@ -42,7 +42,7 @@
     </form>
 
     @section('scripts')
-        <script src="https://cdn.tiny.cloud/1/p47paciinlfiov1oumn6ftva8g3x4qwt5z2z3258ayqs6lf4/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+        <script src="https://cdn.tiny.cloud/1/{{ env('TINY_MCE_SECRET') }}/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
         <script>
             tinymce.init({
                 selector: 'textarea#articlecontent',
