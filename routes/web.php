@@ -23,7 +23,7 @@ Route::get('/article/{slug}', [\App\Http\Controllers\FrontController::class, 'ar
 Route::get('/category/{slug}', [\App\Http\Controllers\FrontController::class, 'categoryPage'])->name('category-view');
 
 Route::group([
-    'prefix' => '/dashboard',
+    'prefix' => '/dashboard'
 ], function() {
     Route::resource('/category', \App\Http\Controllers\CategoryController::class);
     Route::resource('/article', \App\Http\Controllers\ArticleController::class);

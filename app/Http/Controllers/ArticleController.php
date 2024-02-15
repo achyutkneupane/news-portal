@@ -7,6 +7,17 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            $role = auth()->user()->role;
+            if($role !== "admin" && $role !== "editor") {
+                return redirect()->route('landing-page');
+            } else {
+                return $next($request);
+            }
+        });
+    }
     /**
      * Display a listing of the resource.
      */
